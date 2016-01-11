@@ -9,8 +9,8 @@ Contact Hubert Jin (hubertj@princeton.edu) with questions or issues.
 
 This project comprises a set of multiple example scripts and a setup script to
 help prepare your HPC environment for R-based HPC. These scripts work *out of
-the box* on Tukey, Della, and Adroit. There are some additional examples of using
-Python and Matlab, but these are not the focus.  More information on these
+the box* on Tukey, Della, and Adroit. ASPC is advanced statistical programming 
+camp, so we focus on R and Rcpp etc. More information on these
 scripts is below.
 
 ## Where?
