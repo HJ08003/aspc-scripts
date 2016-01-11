@@ -1,6 +1,6 @@
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/olmjo/tigress-scripts/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-# ASPC-scripts (Copied from Jonathan Olmsted's TIGRESS-scripts githu and revised accordingly)
+# ASPC-scripts (Copied from Jonathan Olmsted's TIGRESS-scripts github, and revised accordingly)
 Setup and Example scripts (mostly) for R-based HPC at Princeton University
 
 Contact Hubert Jin (hubertj@princeton.edu) with questions or issues.
