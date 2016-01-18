@@ -238,9 +238,9 @@ cd ./examples/ex8/
 sbatch ex8.slurm
 ```
 
-It failed, saying g++ is not available. 
+It failed, error message said "g++ is not available". 
 
-Note: The reason is that the nodes don't have compiler, only the head node do.
+Note: The reason is that the nodes don't have compiler, only the head node does.
 
 ##### Example 9: make a R module with cpp code pre-compiled and packaged. 
 
