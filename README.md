@@ -230,7 +230,7 @@ sbatch ex7.slurm
 
 ##### Example 8: single-node non-parallel R job with Rcpp
 
-To be developed ...
+If you cut-and-paste the R code in RStudio or R console, the cpp code is comipled and everything works. But not the following.
 
 To run under SLURM:
 ```
@@ -238,10 +238,30 @@ cd ./examples/ex8/
 sbatch ex8.slurm
 ```
 
+It failed, saying g++ is not available. 
+
+Note: The reason is that the nodes don't have compiler, only the head node do.
+
+##### Example 9: make a R module with cpp code pre-compiled and packaged. 
+
+The solution to example 8 is to revise it:
+
+   (1) Create a R package and have it compiled for rcpp ahead of time.
+   (2) In the R code, the package will be imported and functions used.
+
+Create a module in R:
+library("Rcpp")
+Rcpp.package.skeleton(name = "mymodule")
+
+Install the module in UNIX/LINUX shell:
+R CMD INSTALL mymodule
+
+Day5 talks about how to make a R package.
+
 
 #### Index of Topics 
 - common scheduler directives: Example 2
-- sequential execution of scripts: Examples 3, 8 (TBD)
+- sequential execution of scripts: Examples 3, 8, 9
 - misc. shell commands in job scripts: Example 2
 - job arrays: Example 5
 - passing command line arguments: Example 5
