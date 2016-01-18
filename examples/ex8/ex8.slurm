@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-#SBATCH --ntasks=3
+#SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH -t 10:00
-#SBATCH -J test
+#SBATCH -t 05:00
+#SBATCH -J Ex8
 #SBATCH -o log.%j
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
@@ -17,19 +17,8 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-## Prepare Env
-. /etc/profile.d/modules.sh
+export TOTALPROCS=${SLURM_CPUS_ON_NODE}
 
-source ~/.bashrc
+R CMD INSTALL mymodule
 
-ulimit
-
-## Compile Test Binary
-mpic++ hello.c -o tester
-
-## Run Test Binary
-mpirun -mca btl ^openib ./tester
-srun ./tester
-
-## Remove Test Binary
-rm -f ./tester
+Rscript ./ex8.R

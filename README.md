@@ -9,8 +9,8 @@ Contact Hubert Jin (hubertj@princeton.edu) with questions or issues.
 
 This project comprises a set of multiple example scripts and a setup script to
 help prepare your HPC environment for R-based HPC. These scripts work *out of
-the box* on Tukey, Della, and Adroit. ASPC is advanced statistical programming 
-camp, so we focus on R and Rcpp etc. More information on these
+the box* on Tukey, Della, and Adroit. There are some additional examples of using
+Python and Matlab, but these are not the focus.  More information on these
 scripts is below.
 
 ## Where?
@@ -117,14 +117,14 @@ random numbers using the Rscript interface to R.
 
 To run under SLURM:
 ```
-cd ./examples/ex0/
-sbatch ex0.slurm
+cd ./examples/ex1/
+sbatch ex1.slurm
 ```
 
 ##### Example 2: A Reasonable Default
 
 This script represents a reasonable starting point for simple jobs. It is
-more explicit about how the job should be managed than Example 0. It still
+more explicit about how the job should be managed than Example 1. It still
 requests 1 task with 1 processor. It requests only 10 minutes of time. It uses a
 custom name in the queue and has both the error log and the output log merged
 into one file which begins with log.* and has a suffix determined by the job
@@ -140,8 +140,8 @@ to R.
 
 To run under SLURM:
 ```
-cd ./examples/ex1/
-sbatch ex1.slurm
+cd ./examples/ex2/
+sbatch ex2.slurm
 ```
 
 ##### Example 3: Example 2 + an external R script
@@ -155,8 +155,8 @@ package **pscl**.
 
 To run under SLURM:
 ```
-cd ./examples/ex2/
-sbatch ex2.slurm
+cd ./examples/ex3/
+sbatch ex3.slurm
 ```
 
 ##### Example 4: Example 3 + parallel execution + passing arguments to R
@@ -177,8 +177,8 @@ MPI process is running and what it's "id" is.
 
 To run under SLURM:
 ```
-cd ./examples/ex3/
-sbatch ex3.slurm
+cd ./examples/ex4/
+sbatch ex4.slurm
 ```
 
 ##### Example 5: Example 3 + job arrays + passing arguments to R
@@ -194,8 +194,8 @@ With this setup, each sub-job is requesting the same resources.
 
 To run under SLURM:
 ```
-cd ./examples/ex4/
-sbatch ex4.slurm
+cd ./examples/ex5/
+sbatch ex5.slurm
 ```
 
 ##### Example 6: "Substantive" Example Supporting Cross-Node Execution

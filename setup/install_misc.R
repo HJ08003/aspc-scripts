@@ -12,7 +12,9 @@ install.packages(c("doMPI",
                    "doRNG",
                    "doMC",
                    "Rcpp",
-                   "RcppArmadillo"
+                   "RcppArmadillo",
+		   "pscl",
+		   "coda"
                    )
                  )
 

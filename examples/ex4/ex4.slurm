@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-#SBATCH --ntasks=1
+#SBATCH --ntasks=3
 #SBATCH --cpus-per-task=1
 #SBATCH -t 10:00
-#SBATCH -J Ex2
+#SBATCH -J Ex4
 #SBATCH -o log.%j
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
@@ -17,4 +17,4 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-Rscript ./ex2.R
+srun Rscript ./ex4.R 10

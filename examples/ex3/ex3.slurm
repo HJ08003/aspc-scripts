@@ -3,7 +3,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH -t 10:00
-#SBATCH -J Ex1
+#SBATCH -J Ex3
 #SBATCH -o log.%j
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
@@ -17,4 +17,4 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-Rscript -e 'rnorm(1e3)'
+Rscript ./ex3.R

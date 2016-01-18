@@ -2,12 +2,11 @@
 
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH -t 10:00
-#SBATCH -J Ex4
-#SBATCH -o log.%A_%a
+#SBATCH -t 05:00
+#SBATCH -J Ex8
+#SBATCH -o log.%j
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
-#SBATCH --array=1-3
 
 echo '-------------------------------'
 cd ${SLURM_SUBMIT_DIR}
@@ -18,4 +17,8 @@ echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
 
-srun Rscript ./ex4.R
+export TOTALPROCS=${SLURM_CPUS_ON_NODE}
+
+R CMD INSTALL mymodule
+
+Rscript ./ex9.R

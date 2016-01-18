@@ -1,0 +1,3 @@
+useDynLib(mymodule)
+exportPattern("^[[:alpha:]]+")
+importFrom(Rcpp, evalCpp)

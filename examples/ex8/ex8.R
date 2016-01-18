@@ -1,4 +1,4 @@
 library(Rcpp)
-sourceCpp(file = "ex10.cpp")
+sourceCpp(file = "ex8.cpp")
 
 adder(10, 33.2)
