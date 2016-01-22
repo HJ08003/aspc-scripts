@@ -5,8 +5,6 @@
 args <- commandArgs(trailingOnly = TRUE)
 nIters <- as.integer(args[1])
 paste("nIters:", nIters)
-                                        #
-                                        #
 
 ### ############
 ### Dependencies
@@ -15,25 +13,17 @@ paste("nIters:", nIters)
 library(foreach)
 library(doMPI)
 
-                                        #
-                                        #
-
-
 ### ################
 ### Init MPI Backend
 ### ################
 cl <- startMPIcluster()
 registerDoMPI(cl)
-                                        #
-                                        #
 
 ### ##############
 ### Master Process
 ### ##############
 system("hostname")
 Sys.getpid()
-                                        #
-                                        #
 
 ### ########################
 ### Main Loop over MPI Procs
@@ -54,17 +44,13 @@ system.time({
                    }
 })
 
-
 out
 
 Sys.getpid()
 mpi.comm.rank(0)
 mpi.comm.size(0)
 mpi.get.processor.name()
-
-                                        #
-                                        #
-
+getDoParWorkers()
 
 closeCluster(cl)
 mpi.quit()

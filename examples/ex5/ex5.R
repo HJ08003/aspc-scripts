@@ -1,15 +1,9 @@
 ### #################
 ### Read Env Variable
 ### #################
-jid <- paste(Sys.getenv("PBS_JOBID"),
-             Sys.getenv("SLURM_JOB_ID"),
-             sep = ""
-             )
+jid <- Sys.getenv("SLURM_JOB_ID")
 
-aid <- paste(Sys.getenv("PBS_ARRAYID"),
-             Sys.getenv("SLURM_ARRAY_TASK_ID"),
-             sep = ""
-             )
+aid <- Sys.getenv("SLURM_ARRAY_TASK_ID")
                                         #
                                         #
 
@@ -17,7 +11,7 @@ aid <- paste(Sys.getenv("PBS_ARRAYID"),
 ### SLURM Env Variable
 ### ##################
 cat(paste("This is job: ", jid, ".\n", sep = ""))
-cat(paste("The sub-id is: ", aid, ".\n\n", sep = ""))
+cat(paste("My sub-id is: ", aid, ".\n\n", sep = ""))
                                         #
                                         #
 
