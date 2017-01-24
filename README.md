@@ -43,7 +43,7 @@ installed.
 Start by navigating into the repository directory:
 
 ```
-cd tigress-scripts
+cd aspc-scripts
 ```
 
 #### Setup and Test Scripts
