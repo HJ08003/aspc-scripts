@@ -10,4 +10,6 @@
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
 
+#SBATCH --reservation=advstats2017
+
 Rscript ./parallel.R 8
