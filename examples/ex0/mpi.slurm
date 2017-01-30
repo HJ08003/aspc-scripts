@@ -1,19 +1,15 @@
 #!/usr/bin/env bash
 
-##  SBATCH --ntasks=50
-##  SBATCH --cpus-per-task=1
-
-#SBATCH -N 2
-#SBATCH --ntasks-per-node=10
-
-##  SBATCH -n <number>
-
+#SBATCH --nodes 2               # << number of compute nodes
+#SBATCH --ntasks-per-node=19    # << number of processors per compute node
 
 #SBATCH -t 10:00
 #SBATCH -J mpi
 #SBATCH -o log-mpi.%j
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
+
+#SBATCH --reservation=advstats2017
 
 echo '-------------------------------'
 cd ${SLURM_SUBMIT_DIR}
