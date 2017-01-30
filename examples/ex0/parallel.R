@@ -55,3 +55,4 @@ microbenchmark("parloop" = calcPWDfe(mCounties),
                times = 5
 )
 
+stopCluster(cl)
