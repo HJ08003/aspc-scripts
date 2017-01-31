@@ -5,6 +5,10 @@
 ## Functions
 ##
 
+
+module load rh
+module load openmpi/gcc/1.6.5/64
+
 useVer() {
     echo -e "* Using $1 version $2."
 }
