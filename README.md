@@ -53,7 +53,7 @@ script is located in `./setup/setup.sh`. To set up your environment, simply run
 the script:
 ```
 cd setup
-./setup.sh
+bash ./setup.sh
 ```
 
 **Warning:** If you have never used R on these machines before, you start first
@@ -92,8 +92,8 @@ If you've never run this before, answer "y" to each question.
 
 To test the openmpi setup run the following:
 ```
-cd ../test/
-./test_mpi.sh
+cd ../test/ 
+bash ./test_mpi.sh
 ```
 
 You should see output like:
