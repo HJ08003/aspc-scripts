@@ -14,19 +14,13 @@ install.packages(c("doMPI",
                    "Rcpp",
                    "RcppArmadillo",
 		   "pscl",
+		   "ggplot2",
+##		   "MASS",
+		   "reshape",
+##		   "plyr",
+		   "microbenchmark",
+		   "Zelig",
 		   "coda"
                    )
                  )
-
-library(doMPI)
-library(foreach)
-library(snow)
-library(doSNOW)
-library(doParallel)
-library(doRNG)
-library(doMC)
-library(Rcpp)
-library(RcppArmadillo)
-library(pscl)
-library(coda)
 
