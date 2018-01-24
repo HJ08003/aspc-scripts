@@ -20,6 +20,7 @@ install.packages(c("doMPI",
 ##		   "plyr",
 		   "microbenchmark",
 		   "Zelig",
+		   "knitr",
 		   "coda"
                    )
                  )
