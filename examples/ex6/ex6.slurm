@@ -8,6 +8,8 @@
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
 
+#SBATCH --reservation=ASPC2018
+
 echo '-------------------------------'
 cd ${SLURM_SUBMIT_DIR}
 echo ${SLURM_SUBMIT_DIR}
@@ -16,5 +18,7 @@ echo Time is $(date)
 echo SLURM_NODES are $(echo ${SLURM_NODELIST})
 echo '-------------------------------'
 echo -e '\n\n'
+
+module load openmpi/gcc/2.1.0/64
 
 srun Rscript ./ex6.R
