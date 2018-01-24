@@ -18,3 +18,15 @@ install.packages(c("doMPI",
                    )
                  )
 
+library(doMPI)
+library(foreach)
+library(snow)
+library(doSNOW)
+library(doParallel)
+library(doRNG)
+library(doMC)
+library(Rcpp)
+library(RcppArmadillo)
+library(pscl)
+library(coda)
+

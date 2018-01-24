@@ -5,10 +5,6 @@
 ## Functions
 ##
 
-
-module load rh
-module load openmpi/gcc/1.6.5/64
-
 useVer() {
     echo -e "* Using $1 version $2."
 }
@@ -31,6 +27,7 @@ echo -e ""
 ##
 
 LOCATION=$(hostname)
+## RMPIVERS=0.6-3
 RMPIVERS=0.6-3
 
 
@@ -80,19 +77,19 @@ case ${LOCATION} in
         export OMPIVERS=1.6.5
         ;;
     della3)
-        export OMPIVERS=1.4.5
+        export OMPIVERS=1.6.5
         ;;
     tukey)
         export OMPIVERS=1.6.3
         ;;
     adroit.Princeton.EDU)
-        export OMPIVERS=1.3.0
+        export OMPIVERS=1.10.2
         ;;
     adroit3)
-        export OMPIVERS=1.6.5
+        export OMPIVERS=1.10.2
         ;;
     *)
-        export OMPIVERS=1.4.5
+        export OMPIVERS=1.6.5
         ;;
 esac
 
