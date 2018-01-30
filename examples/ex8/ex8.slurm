@@ -19,6 +19,4 @@ echo -e '\n\n'
 
 export TOTALPROCS=${SLURM_CPUS_ON_NODE}
 
-R CMD INSTALL mymodule
-
 Rscript ./ex8.R
