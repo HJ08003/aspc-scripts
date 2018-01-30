@@ -21,6 +21,7 @@ install.packages(c("doMPI",
 		   "microbenchmark",
 		   "Zelig",
 		   "knitr",
+		   "bootstrap",
 		   "coda"
                    )
                  )
