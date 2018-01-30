@@ -8,4 +8,6 @@
 #SBATCH --mail-type=begin
 #SBATCH --mail-type=end
 
+#SBATCH --reservation=ASPC2018
+
 Rscript ./loop.R
