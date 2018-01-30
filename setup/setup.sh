@@ -27,7 +27,6 @@ echo -e ""
 ##
 
 LOCATION=$(hostname)
-## RMPIVERS=0.6-3
 RMPIVERS=0.6-3
 
 
@@ -83,10 +82,10 @@ case ${LOCATION} in
         export OMPIVERS=1.6.3
         ;;
     adroit.Princeton.EDU)
-        export OMPIVERS=1.10.2
+        export OMPIVERS=2.1.0
         ;;
     adroit3)
-        export OMPIVERS=1.10.2
+        export OMPIVERS=2.1.0
         ;;
     *)
         export OMPIVERS=1.6.5
@@ -103,25 +102,28 @@ useVer Rmpi ${RMPIVERS}
 useVer GCC ${GCCVERS}
 echo ""
 
-
+##
+## set MPI_ROOT based on where the loaded openmpi is installed
+##
+export MPI_ROOT=`echo $LD_LIBRARY_PATH | perl -n -e 's/.*?([\/a-zA-Z]*?\/openmpi.*?)(\/lib64):.*/\$1/g; print'`
 
 ##
 ## Rmpi DL
 ##
-while true; do
-    read -p "\
-@ Do you need to DL Rmpi?
-[y/n]" yn
-    case $yn in
-        [Yy]* )
-            wget http://www.stats.uwo.ca/faculty/yu/Rmpi/download/linux/Rmpi_${RMPIVERS}.tar.gz -O rmpi.tar.gz;
-            break;;
-
-        [Nn]* ) break;;
-        * ) ansYN ;;
-    esac
-done
-echo ""
+# while true; do
+#     read -p "\
+# @ Do you need to DL Rmpi?
+# [y/n]" yn
+#     case $yn in
+#         [Yy]* )
+#             wget http://www.stats.uwo.ca/faculty/yu/Rmpi/download/linux/Rmpi_${RMPIVERS}.tar.gz -O rmpi.tar.gz;
+#             break;;
+# 
+#         [Nn]* ) break;;
+#         * ) ansYN ;;
+#     esac
+# done
+# echo ""
 
 
 
@@ -151,26 +153,26 @@ echo ""
 ## Rmpi Install
 ##
 
-while true; do
-    read -p "\
-@ Do you need to install Rmpi?
-[y/n]" yn
-    case $yn in
-        [Yy]* )
-            module load openmpi/gcc/${OMPIVERS}/64
-            R CMD INSTALL --configure-args="--with-Rmpi-include=/usr/local/openmpi/${OMPIVERS}/gcc/x86_64/include
-                --with-Rmpi-libpath=/usr/local/openmpi/${OMPIVERS}/gcc/x86_64/lib64
-                --with-Rmpi-type=OPENMPI" \
-                    rmpi.tar.gz
-
-            break;;
-
-        [Nn]* )
-            break;;
-        * ) ansYN ;;
-    esac
-done
-echo ""
+# while true; do
+#     read -p "\
+# @ Do you need to install Rmpi?
+# [y/n]" yn
+#     case $yn in
+#         [Yy]* )
+#             module load openmpi/gcc/${OMPIVERS}/64
+#             R CMD INSTALL --configure-args="--with-Rmpi-include=/usr/local/openmpi/${OMPIVERS}/gcc/x86_64/include
+#                 --with-Rmpi-libpath=/usr/local/openmpi/${OMPIVERS}/gcc/x86_64/lib64
+#                 --with-Rmpi-type=OPENMPI" \
+#                     rmpi.tar.gz
+# 
+#             break;;
+# 
+#         [Nn]* )
+#             break;;
+#         * ) ansYN ;;
+#     esac
+# done
+# echo ""
 
 
 ##
